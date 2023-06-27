@@ -8,6 +8,38 @@
   display: flex;
 }
 
-ul {
-  list-style: none;
+.numbered-list {
+  counter-reset: list-counter;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  counter-increment: list-counter;
+}
+
+.user-item::before {
+  content: counter(list-counter) ". ";
+  margin-right: 5px;
+}
+
+.user-avatar {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-login {
+  font-weight: bold;
+}
+
+.user-url {
+  font-size: 0.9em;
 }
